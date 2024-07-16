@@ -1,2 +1,2 @@
 # CFLAG.h
-No bullshit command line flag header for C
+No bullshit command line flag parser for C
