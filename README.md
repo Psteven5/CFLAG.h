@@ -17,5 +17,6 @@ int main(int argc, char **argv) {
 ```
 ```
 ./main -i=main.js -h -o trash
+
 i=main.js, o=trash, h=true
 ```
