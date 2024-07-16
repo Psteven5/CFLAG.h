@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
   char const *i = NULL, *o = NULL;
   bool h = false;
   CFLAGS(i, o, h);
-  printf("i=%s, o=%s, h?=%s\n", i, o, h ? "true" : "false");
+  printf("i=%s, o=%s, h=%s\n", i, o, h ? "true" : "false");
 }
 ```
 ```
