@@ -1,6 +1,7 @@
 #include <assert.h>
 #include "CFLAG.h"
 
+/* You do need to name argc and argv respectively! */
 int main(int argc, char **argv) {
   
   /* The actual variable values are the default flag values. */
