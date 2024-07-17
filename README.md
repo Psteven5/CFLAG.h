@@ -5,7 +5,7 @@ Meant for simple use when you just want those flags but don't want to build a hu
 
 There is not much to this header:
  * CFLAG(FLAG) that parses the flag -FLAG and stores its result in the FLAG variable.
- * CFLAGS(...) (|...| <= 24) that does this for multiple flags. (for convenience)
+ * CFLAGS(...) (|...| <= 16) that does this for multiple flags. (for convenience)
 
 Check example.c for more details
 
