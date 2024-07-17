@@ -40,7 +40,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef CFLAG_STR_c02b7d24a066adb
 #undef CFLAG_STR__c02b7d24a066adb
 #define CFLAG_STR__c02b7d24a066adb(flag) # flag
-#define CFLAG_STR_c02b7d24a066adb(flag) CFLAG_STR_c02b7d24a066adb(flag)
+#define CFLAG_STR_c02b7d24a066adb(flag) CFLAG_STR__c02b7d24a066adb(flag)
 
 #undef CFLAG_FMT_c02b7d24a066adb
 #define CFLAG_FMT_c02b7d24a066adb(flag) _Generic((flag) \
@@ -61,7 +61,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #undef CFLAG
 #define CFLAG(flag) CFLAG_(CFLAG_STR_c02b7d24a066adb(flag), sizeof(CFLAG_STR_c02b7d24a066adb(flag)) - 1, CFLAG_FMT_c02b7d24a066adb(flag), &argc, argv, &flag, sizeof(flag))
-static inline void CFLAG_(char const *restrict const name, size_t name_len, char const *restrict const fmt, int *restrict const pargc, char **argv, void *data, size_t data_size) {
+static inline void CFLAG_(char const *name, size_t name_len, char const *fmt, int *pargc, char **argv, void *data, size_t data_size) {
   for (int i = 0; i < *pargc; ++i) {
     if ('-' == argv[i][0] && 0 == memcmp(name, argv[i] + 1, name_len)) {
       if ('=' == argv[i][name_len + 1]) {
@@ -120,7 +120,7 @@ static inline void CFLAG_(char const *restrict const name, size_t name_len, char
 #define CFLAGS_16_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_15_c02b7d24a066adb(__VA_ARGS__)
 #define CFLAGS_C_c02b7d24a066adb(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,m,...) m
 #define CFLAGS(...) do { \
-  CFLAGS_C_c02b7d24a066adb(__VA_ARGS__,CFLAGS_16_c02b7d24a066adb,CFLAGS_15_c02b7d24a066adb,CFLAGS_14_c02b7d24a066adb,CFLAGS_13_c02b7d24a066adb,CFLAGS_12_c02b7d24a066adb,CFLAGS_11_c02b7d24a066adb,CFLAGS_10_c02b7d24a066adb,CFLAGS_9_c02b7d24a066adb,CFLAGS_8_c02b7d24a066adb,CFLAGS_7_c02b7d24a066adb,CFLAGS_6_c02b7d24a066adb,CFLAGS_5_c02b7d24a066adb,CFLAGS_4_c02b7d24a066adb,CFLAGS_3_c02b7d24a066adb,CFLAGS_2_c02b7d24a066adb,CFLAG)(__VA_ARGS__) \
+  CFLAGS_C_c02b7d24a066adb(__VA_ARGS__,CFLAGS_16_c02b7d24a066adb,CFLAGS_15_c02b7d24a066adb,CFLAGS_14_c02b7d24a066adb,CFLAGS_13_c02b7d24a066adb,CFLAGS_12_c02b7d24a066adb,CFLAGS_11_c02b7d24a066adb,CFLAGS_10_c02b7d24a066adb,CFLAGS_9_c02b7d24a066adb,CFLAGS_8_c02b7d24a066adb,CFLAGS_7_c02b7d24a066adb,CFLAGS_6_c02b7d24a066adb,CFLAGS_5_c02b7d24a066adb,CFLAGS_4_c02b7d24a066adb,CFLAGS_3_c02b7d24a066adb,CFLAGS_2_c02b7d24a066adb,CFLAG)(__VA_ARGS__); \
 } while (0)
 
 #endif /* CFLAG_H */
