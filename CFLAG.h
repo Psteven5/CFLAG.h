@@ -29,21 +29,21 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CFLAG_H_c02b7d24a066adb747fdeb12deb21bfa
-#define CFLAG_H_c02b7d24a066adb747fdeb12deb21bfa
+#ifndef CFLAG_H_c02b7d24a066adb
+#define CFLAG_H_c02b7d24a066adb
 
 #include <inttypes.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 
-#undef CFLAG_STR
-#undef CFLAG_STR_
-#define CFLAG_STR_(flag) # flag
-#define CFLAG_STR(flag) CFLAG_STR_(flag)
+#undef CFLAG_STR_c02b7d24a066adb
+#undef CFLAG_STR__c02b7d24a066adb
+#define CFLAG_STR__c02b7d24a066adb(flag) # flag
+#define CFLAG_STR_c02b7d24a066adb(flag) CFLAG_STR_c02b7d24a066adb(flag)
 
-#undef CFLAG_FMT
-#define CFLAG_FMT(flag) _Generic((flag) \
+#undef CFLAG_FMT_c02b7d24a066adb
+#define CFLAG_FMT_c02b7d24a066adb(flag) _Generic((flag) \
         , bool: "B" \
         , char: "%c" \
         , uint8_t: "%" SCNu8 \
@@ -60,7 +60,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 )
 
 #undef CFLAG
-#define CFLAG(flag) CFLAG_(CFLAG_STR(flag), sizeof(CFLAG_STR(flag)) - 1, CFLAG_FMT(flag), &argc, argv, &flag, sizeof(flag))
+#define CFLAG(flag) CFLAG_(CFLAG_STR_c02b7d24a066adb(flag), sizeof(CFLAG_STR_c02b7d24a066adb(flag)) - 1, CFLAG_FMT_c02b7d24a066adb(flag), &argc, argv, &flag, sizeof(flag))
 static inline void CFLAG_(char const *restrict const name, size_t name_len, char const *restrict const fmt, int *restrict const pargc, char **argv, void *data, size_t data_size) {
   for (int i = 0; i < *pargc; ++i) {
     if ('-' == argv[i][0] && 0 == memcmp(name, argv[i] + 1, name_len)) {
@@ -103,32 +103,24 @@ static inline void CFLAG_(char const *restrict const name, size_t name_len, char
   }
 }
 
-#define CFLAGS_2_(_0,_1) CFLAG(_0);CFLAG(_1)
-#define CFLAGS_3_(_0,...) CFLAG(_0);CFLAGS_2_(__VA_ARGS__)
-#define CFLAGS_4_(_0,...) CFLAG(_0);CFLAGS_3_(__VA_ARGS__)
-#define CFLAGS_5_(_0,...) CFLAG(_0);CFLAGS_4_(__VA_ARGS__)
-#define CFLAGS_6_(_0,...) CFLAG(_0);CFLAGS_5_(__VA_ARGS__)
-#define CFLAGS_7_(_0,...) CFLAG(_0);CFLAGS_6_(__VA_ARGS__)
-#define CFLAGS_8_(_0,...) CFLAG(_0);CFLAGS_7_(__VA_ARGS__)
-#define CFLAGS_9_(_0,...) CFLAG(_0);CFLAGS_8_(__VA_ARGS__)
-#define CFLAGS_10_(_0,...) CFLAG(_0);CFLAGS_9_(__VA_ARGS__)
-#define CFLAGS_11_(_0,...) CFLAG(_0);CFLAGS_10_(__VA_ARGS__)
-#define CFLAGS_12_(_0,...) CFLAG(_0);CFLAGS_11_(__VA_ARGS__)
-#define CFLAGS_13_(_0,...) CFLAG(_0);CFLAGS_12_(__VA_ARGS__)
-#define CFLAGS_14_(_0,...) CFLAG(_0);CFLAGS_13_(__VA_ARGS__)
-#define CFLAGS_15_(_0,...) CFLAG(_0);CFLAGS_14_(__VA_ARGS__)
-#define CFLAGS_16_(_0,...) CFLAG(_0);CFLAGS_15_(__VA_ARGS__)
-#define CFLAGS_17_(_0,...) CFLAG(_0);CFLAGS_16_(__VA_ARGS__)
-#define CFLAGS_18_(_0,...) CFLAG(_0);CFLAGS_17_(__VA_ARGS__)
-#define CFLAGS_19_(_0,...) CFLAG(_0);CFLAGS_18_(__VA_ARGS__)
-#define CFLAGS_20_(_0,...) CFLAG(_0);CFLAGS_19_(__VA_ARGS__)
-#define CFLAGS_21_(_0,...) CFLAG(_0);CFLAGS_20_(__VA_ARGS__)
-#define CFLAGS_22_(_0,...) CFLAG(_0);CFLAGS_21_(__VA_ARGS__)
-#define CFLAGS_23_(_0,...) CFLAG(_0);CFLAGS_22_(__VA_ARGS__)
-#define CFLAGS_24_(_0,...) CFLAG(_0);CFLAGS_23_(__VA_ARGS__)
-#define CFLAGS_C_(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,m,...) m
+#define CFLAGS_2_c02b7d24a066adb(_0,_1) CFLAG(_0);CFLAG(_1)
+#define CFLAGS_3_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_2_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_4_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_3_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_5_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_4_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_6_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_5_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_7_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_6_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_8_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_7_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_9_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_8_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_10_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_9_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_11_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_10_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_12_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_11_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_13_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_12_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_14_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_13_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_15_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_14_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_16_c02b7d24a066adb(_0,...) CFLAG(_0);CFLAGS_15_c02b7d24a066adb(__VA_ARGS__)
+#define CFLAGS_C_c02b7d24a066adb(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,m,...) m
 #define CFLAGS(...) do { \
-  CFLAGS_C_(__VA_ARGS__,CFLAGS_24_,CFLAGS_23_,CFLAGS_22_,CFLAGS_21_,CFLAGS_20_,CFLAGS_19_,CFLAGS_18_,CFLAGS_17_,CFLAGS_16_,CFLAGS_15_,CFLAGS_14_,CFLAGS_13_,CFLAGS_12_,CFLAGS_11_,CFLAGS_10_,CFLAGS_9_,CFLAGS_8_,CFLAGS_7_,CFLAGS_6_,CFLAGS_5_,CFLAGS_4_,CFLAGS_3_,CFLAGS_2_,CFLAG)(__VA_ARGS__) \
+  CFLAGS_C_c02b7d24a066adb(__VA_ARGS__,CFLAGS_16_c02b7d24a066adb,CFLAGS_15_c02b7d24a066adb,CFLAGS_14_c02b7d24a066adb,CFLAGS_13_c02b7d24a066adb,CFLAGS_12_c02b7d24a066adb,CFLAGS_11_c02b7d24a066adb,CFLAGS_10_c02b7d24a066adb,CFLAGS_9_c02b7d24a066adb,CFLAGS_8_c02b7d24a066adb,CFLAGS_7_c02b7d24a066adb,CFLAGS_6_c02b7d24a066adb,CFLAGS_5_c02b7d24a066adb,CFLAGS_4_c02b7d24a066adb,CFLAGS_3_c02b7d24a066adb,CFLAGS_2_c02b7d24a066adb,CFLAG)(__VA_ARGS__) \
 } while (0)
 
-#endif /* CFLAG_H_ */
+#endif /* CFLAG_H */
