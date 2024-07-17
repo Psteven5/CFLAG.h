@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
   char const *name = NULL;
   int rcount = 1;
   bool crash = false;
-  bool help = false;
+  bool helpFlag = false;
 
   /* Calling CFLAG creates a command line flag with the same name of the variable. */
   /* CFLAGS does this for multiple at the same time! (convenience...) */
@@ -28,7 +28,11 @@ int main(int argc, char **argv) {
   /* The value stays the same if there is no more of the flag to be found. */
   CFLAG(rcount);
 
-  if (help) {
+  /* Calling the single CFLAG with a second argument allows you to pick a different name. */
+  /* Now the var is still helpFlag, but the actual flag is -help. */
+  CFLAG(helpFlag, "help");
+  
+  if (helpFlag) {
     assert(0 && "define your own help section for the flags here :))");
   }
 
