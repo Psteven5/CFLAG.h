@@ -118,9 +118,17 @@ static inline void CFLAG_(char const *restrict const name, size_t name_len, char
 #define CFLAGS_14_(_0,...) CFLAG(_0);CFLAGS_13_(__VA_ARGS__)
 #define CFLAGS_15_(_0,...) CFLAG(_0);CFLAGS_14_(__VA_ARGS__)
 #define CFLAGS_16_(_0,...) CFLAG(_0);CFLAGS_15_(__VA_ARGS__)
-#define CFLAGS_C_(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,m,...) m
+#define CFLAGS_17_(_0,...) CFLAG(_0);CFLAGS_16_(__VA_ARGS__)
+#define CFLAGS_18_(_0,...) CFLAG(_0);CFLAGS_17_(__VA_ARGS__)
+#define CFLAGS_19_(_0,...) CFLAG(_0);CFLAGS_18_(__VA_ARGS__)
+#define CFLAGS_20_(_0,...) CFLAG(_0);CFLAGS_19_(__VA_ARGS__)
+#define CFLAGS_21_(_0,...) CFLAG(_0);CFLAGS_20_(__VA_ARGS__)
+#define CFLAGS_22_(_0,...) CFLAG(_0);CFLAGS_21_(__VA_ARGS__)
+#define CFLAGS_23_(_0,...) CFLAG(_0);CFLAGS_22_(__VA_ARGS__)
+#define CFLAGS_24_(_0,...) CFLAG(_0);CFLAGS_23_(__VA_ARGS__)
+#define CFLAGS_C_(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,m,...) m
 #define CFLAGS(...) do { \
-  CFLAGS_C_(__VA_ARGS__,CFLAGS_16_,CFLAGS_15_,CFLAGS_14_,CFLAGS_13_,CFLAGS_12_,CFLAGS_11_,CFLAGS_10_,CFLAGS_9_,CFLAGS_8_,CFLAGS_7_,CFLAGS_6_,CFLAGS_5_,CFLAGS_4_,CFLAGS_3_,CFLAGS_2_,CFLAG)(__VA_ARGS__) \
+  CFLAGS_C_(__VA_ARGS__,CFLAGS_24_,CFLAGS_23_,CFLAGS_22_,CFLAGS_21_,CFLAGS_20_,CFLAGS_19_,CFLAGS_18_,CFLAGS_17_,CFLAGS_16_,CFLAGS_15_,CFLAGS_14_,CFLAGS_13_,CFLAGS_12_,CFLAGS_11_,CFLAGS_10_,CFLAGS_9_,CFLAGS_8_,CFLAGS_7_,CFLAGS_6_,CFLAGS_5_,CFLAGS_4_,CFLAGS_3_,CFLAGS_2_,CFLAG)(__VA_ARGS__) \
 } while (0)
 
 #endif /* CFLAG_H_ */
