@@ -60,7 +60,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 )
 
 #undef CFLAG
-#define CFLAG(flag) CFLAG_(CFLAG_STR_c02b7d24a066adb(flag), sizeof(CFLAG_STR_c02b7d24a066adb(flag)) - 1, CFLAG_FMT_c02b7d24a066adb(flag), &argc, argv, &flag, sizeof(flag))
+#undef CFLAG_HEAD_c02b7d24a066adb
+#define CFLAG_HEAD_c02b7d24a066adb(x, ...) x
+#define CFLAG_1_c02b7d24a066adb(flag) CFLAG_STR_c02b7d24a066adb(flag), sizeof(CFLAG_STR_c02b7d24a066adb(flag))
+#define CFLAG_2_c02b7d24a066adb(_, name) name, sizeof(name)
+#define CFLAG_C_c02b7d24a066adb(_0, _1, m, ...) m
+#define CFLAG(...) CFLAG_(CFLAG_C_c02b7d24a066adb(__VA_ARGS__,CFLAG_2_c02b7d24a066adb,CFLAG_1_c02b7d24a066adb)(__VA_ARGS__) - 1, CFLAG_FMT_c02b7d24a066adb(CFLAG_HEAD_c02b7d24a066adb(__VA_ARGS__)), &argc, argv, &CFLAG_HEAD_c02b7d24a066adb(__VA_ARGS__), sizeof(CFLAG_HEAD_c02b7d24a066adb(__VA_ARGS__)))
 static inline void CFLAG_(char const *name, size_t name_len, char const *fmt, int *pargc, char **argv, void *data, size_t data_size) {
   for (int i = 0; i < *pargc; ++i) {
     if ('-' == argv[i][0] && 0 == memcmp(name, argv[i] + 1, name_len)) {
